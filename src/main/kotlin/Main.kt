@@ -139,7 +139,18 @@ fun main() {
             }
         }
         6->{
-
+            println("Введите первое число: ")
+            val num1:String = readln()
+            println("Введите второе число: ")
+            val num2:String = readln()
+            var result:String = "0"
+            if (num1.toInt()%2==0 && num2.toInt()%2==0)
+                println("Создать нечетное число невозможно")
+            else if(num1.toInt()%2==1)
+                result = num2+num1
+            else if(num2.toInt()%2==1)
+                result = num1+num2
+            println("нечетное число из введенных цифр: " + result)
         }
     }
 }
