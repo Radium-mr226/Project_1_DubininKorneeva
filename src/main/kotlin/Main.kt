@@ -1,10 +1,12 @@
 fun main() {
-    println("Введите номер задания(1-6):")
-    val com: Int = readln().toInt()
-
-    //for (i in 0 until  6) {
+    var com: Int = 1
+    while (com != 0) {
+        println()
+        println("Введите номер задания(1-6):")
+        com = readln().toInt()
         when (com) {
             1 -> {
+                println("Программа подсчитывает количество подряд идущих одинаковых символов во введенной строке(AAADSSSRRTTHAAAA -> A3DS3R2T2HA4")
                 val testt = readln().toString()
                 var res = CharArray(testt.length)
                 var k: Int = 1
@@ -37,11 +39,12 @@ fun main() {
             }
 
             2 -> {
-                var letters = ("AASADDSS")
+                println("Программа подсчитывает количество различных символов во введенной строке. Символы в ответе расположить в алфавитном порядке")
+                var letters = readln().toString()
                 val sort_letters = letters.toCharArray().sortedArray()
 
-                val symbol = CharArray(sort_letters.size)
-                val count = IntArray(sort_letters.size)
+                val symbol = CharArray(sort_letters.size-1)
+                val count = IntArray(sort_letters.size-1)
                 println(symbol)
                 var unique = 0;
 
@@ -72,6 +75,7 @@ fun main() {
             }
 
             3 -> {
+                println("Приложение преобразует введенное пользователем натуральное число из 10-ичной системы в двоичную")
                 println("Введите число:")
                 var dec = readln().toInt()
 
@@ -97,8 +101,8 @@ fun main() {
                 var input = readln().trim()
                 val parts = input.split(" ")
 
-                val num1 = parts[0].toDouble()
-                val num2 = parts[1].toDouble()
+                val num1 = (parts[0].toString()).toDouble()
+                val num2 = (parts[1].toString()).toDouble()
                 val operation = parts[2]
                 var result: Double = 0.0
                 when (operation) {
@@ -135,6 +139,7 @@ fun main() {
             }
 
             6 -> {
+                println("Приложение пользователь вводит две различных цифры. На выходе приложение выдает, если это возможно, из введенных цифр, нечетное число. ")
                 println("Введите первое число: ")
                 val num1: String = readln()
                 println("Введите второе число: ")
@@ -142,16 +147,15 @@ fun main() {
                 var result: String = "0"
                 if (num1.toInt() % 2 == 0 && num2.toInt() % 2 == 0)
                     println("Создать нечетное число невозможно")
-                else if (num1.toInt() % 2 != 0 && num2.toInt() % 2 != 0)
-                {
-                    println("нечетные числа из введенных цифр: " + num1+num2+", "+num2+num1)
-                }
-                else if (num1.toInt() % 2 == 1)
+                else if (num1.toInt() % 2 != 0 && num2.toInt() % 2 != 0) {
+                    println("нечетные числа из введенных цифр: " + num1 + num2 + ", " + num2 + num1)
+                } else if (num1.toInt() % 2 == 1)
                     result = num2 + num1
                 else if (num2.toInt() % 2 == 1)
                     result = num1 + num2
                 println("нечетное число из введенных цифр: " + result)
             }
+            }
         }
-    //}
+    }
 }
