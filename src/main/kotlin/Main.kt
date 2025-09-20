@@ -43,8 +43,8 @@ fun main() {
                 var letters = readln().toString()
                 val sort_letters = letters.toCharArray().sortedArray()
 
-                val symbol = CharArray(sort_letters.size-1)
-                val count = IntArray(sort_letters.size-1)
+                val symbol = CharArray(sort_letters.size - 1)
+                val count = IntArray(sort_letters.size - 1)
                 println(symbol)
                 var unique = 0;
 
@@ -111,17 +111,20 @@ fun main() {
                     "*" -> result = num1 * num2
                     "/" -> {
                         if (num2 != 0.0)
+                        {
                             result = num1 / num2
+                            println(result)
+                        }
                         else
                             println("На ноль делить нельзя")
                     }
 
                 }
-                println(result)
 
             }
 
             5 -> {
+                println("приложение, с помощью которого пользователь, введя целое число n и основание степени x узнает, существует ли целочисленный показатель степени y для которого выполняется равенство xy = n.")
                 println("Введите целое число n и основание x через пробел: ")
                 val input = readln().trim().split(" ")
 
@@ -147,14 +150,17 @@ fun main() {
                 var result: String = "0"
                 if (num1.toInt() % 2 == 0 && num2.toInt() % 2 == 0)
                     println("Создать нечетное число невозможно")
-                else if (num1.toInt() % 2 != 0 && num2.toInt() % 2 != 0) {
+                else if ((num1.toInt() % 2 != 0 && num2.toInt() % 2 != 0)&&num2!=num1) {
                     println("нечетные числа из введенных цифр: " + num1 + num2 + ", " + num2 + num1)
-                } else if (num1.toInt() % 2 == 1)
+                } else if (num1.toInt() % 2 == 1) {
                     result = num2 + num1
-                else if (num2.toInt() % 2 == 1)
+                    println("нечетное число из введенных цифр: " + result)
+                }
+                else if (num2.toInt() % 2 == 1) {
                     result = num1 + num2
-                println("нечетное число из введенных цифр: " + result)
-            }
+                    println("нечетное число из введенных цифр: " + result)
+                }
+
             }
         }
     }
